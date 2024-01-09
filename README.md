@@ -1,6 +1,12 @@
-# adivinha-game
+# Adivinha-game
+
+## Como acessar??
+
+- Você pode clonar esse repositório e abrir em seu VsCode.
 
 ## Regras do jogo:
+
+OBS:  Não vale olhar o console de desenvolvedor do navegador!
 
 1 - O sistema irá armazenar 5 itens na lista logo quando você iniciar o programa na web.
 
