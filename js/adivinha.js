@@ -1,71 +1,71 @@
-    function sorteia() {
+function sorteia() {
 
-        return Math.round(Math.random() * 10);
-    }
+    return Math.round(Math.random() * 10);
+}
 
-    function sorteiaNumeros(quantidade){
+function sorteiaNumeros(quantidade){
 
-        var segredos = [];
+    var segredos = [];
 
-        var numero = 1;
+    var numero = 1;
 
-        while(numero <= quantidade) {
+    while(numero <= quantidade) {
 
-            var numeroAleatorio = sorteia();
+        var numeroAleatorio = sorteia();
 
-            if(numeroAleatorio !== 0) {
-                var achou = false;
+        if(numeroAleatorio !== 0) {
+            var achou = false;
 
-                for(var posicao = 0; posicao < segredos.length; posicao++){
-                    if(segredos[posicao] == numeroAleatorio) {
-                        achou = true;
-                        break;
-                    }
+            for(var posicao = 0; posicao < segredos.length; posicao++){
+                if(segredos[posicao] == numeroAleatorio) {
+                    achou = true;
+                    break;
                 }
-
-                if(achou == false) {
-
-                    // array.push() serve para empurrar elementos de dentro da lista (manipulação de arrays).
-                    segredos.push(numeroAleatorio);
-                    numero++;
-                }  
             }
 
+            if(achou == false) {
+
+                // array.push() serve para empurrar elementos de dentro da lista (manipulação de arrays).
+                segredos.push(numeroAleatorio);
+                numero++;
+            }  
         }
 
-        return segredos;
     }
 
-	var segredos = sorteiaNumeros(5);
+    return segredos;
+}
 
-    console.log(segredos)
+var segredos = sorteiaNumeros(5);
 
-	//document.querySelector = pegar a tag do HTML para trabalhar.
-	var input = document.querySelector("input");
-	input.focus();
+console.log(segredos)
 
- 	function verifica() {
+//document.querySelector = pegar a tag do HTML para trabalhar.
+var input = document.querySelector("input");
+input.focus();
 
-        var achou = false;
-        //O array.length filtra a quantidade de índices de um array.
-        for(var posicao = 0; posicao < segredos.length ; posicao++) {
+function verifica() {
 
-            if(input.value == segredos[posicao]) {
+    var achou = false;
+    //O array.length filtra a quantidade de índices de um array.
+    for(var posicao = 0; posicao < segredos.length ; posicao++) {
 
-                alert("Você ACERTOU!");
-                achou = true;
-                break
-            } 
-        }
-        if(achou == false) {
-            alert("Você ERROUU!!!!");
-        }    
+        if(input.value == segredos[posicao]) {
 
-        input.value = "";
-        input.focus();
-     }       
+            alert("Você ACERTOU!");
+            achou = true;
+            break
+        } 
+    }
+    if(achou == false) {
+        alert("Você ERROUU!!!!");
+    }    
 
-    var button = document.querySelector("button");
+    input.value = "";
+    input.focus();
+    }       
 
-    button.onclick = verifica;
+var button = document.querySelector("button");
+
+button.onclick = verifica;
 
